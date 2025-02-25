@@ -9,6 +9,7 @@ pretrain_checkpoints/*.pth
 */*.bin
 */*.pth
 */*.pt
+.idea
 
 # C extensions
 *.so
