@@ -16,7 +16,7 @@ audio_processor, vae, unet, pe = load_all_model()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 timesteps = torch.tensor([0], device=device)
 
-hdtf_dir = "/opt/datasets/hdtf/split_video_25fps"
+hdtf_source_dir = "/opt/datasets/hdtf/split_video_25fps"
 hdtf_samples_dir = "/opt/datasets/hdtf/samples"
 
 
@@ -165,10 +165,10 @@ def video_run(file_path):
 
 # MittRomney_2.mp4视频有问题
 cnt = 0
-for filename in os.listdir(hdtf_dir):
+for filename in os.listdir(hdtf_source_dir):
     if filename.endswith("mp4") == False:
         continue
-    file_path = os.path.join(hdtf_dir, filename)
+    file_path = os.path.join(hdtf_source_dir, filename)
     video_run(file_path)
     cnt += 1
     print(f"now_is {cnt}")
